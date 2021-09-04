@@ -1,36 +1,29 @@
 # Genetic Algorithm
 
 ## Circuit Specifications:
-Network noise = 0.1 (yielding input fidelity of 0.813).
-
-Gate errors = 0.01: probability of completely depolarize the two qubits i and j it is acting upon
-
-Measurement errors = 0.01: probability of a measurement erroneously report the opposite result
-
-Operations: Controlled-not gates, controlled-phase gates, Coin-Z, Coin-X, Anti-coin-Y
-
-Final statuses: Detected failure, True success, Undetected failure
+* Network noise = 0.1 (yielding input fidelity of 0.813).
+* Gate errors = 0.01: probability of completely depolarize the two qubits i and j it is acting upon
+* Measurement errors = 0.01: probability of a measurement erroneously report the opposite result
+* Operations: Controlled-not gates, controlled-phase gates, Coin-Z, Coin-X, Anti-coin-Y
+* Final statuses: Detected failure, True success, Undetected failure
 
 ## Circuit Evaluation:
 
 We evaluate the purification circuit by using perturbative expansion.
-### Success rate
-success rate=true success+undetected failure
-### Fidelity of the final purified Bell pairs
-f=(true success)/(success rate)
-### Entropy of distribution
-S(f)=-(log⁡(f)∗f+log⁡((1-f)/3)∗(1-f))
-      where (1-f)/3 is estimates of probability of getting B, C, or D states.
-### Hashing yield
-Hy(f)=1-S(f)
-
+* Success rate
+```success rate=true success+undetected failure```
+* Fidelity of the final purified Bell pairs
+```f=(true success)/(success rate)```
+* Entropy of distribution
+```S(f)=-(log⁡(f)∗f+log⁡((1-f)/3)∗(1-f))```
+where `(1-f)/3` is estimates of probability of getting B, C, or D states.
+* Hashing yield
+```Hy(f)=1-S(f)```
 The variable that we will use to evaluate the circuit is
-### yield
-yield=p/N∗Hy(f)
-
-Where p=the probability of success
-
-N=the number of consumed raw Bell pairs as measurements of efficiency
+* yield
+```yield=p/N∗Hy(f)```
+where `p` is the probability of success and 
+`N` is the number of consumed raw Bell pairs as measurements of efficiency
 
 
 ## Algorithm: Genetic Algorithm
